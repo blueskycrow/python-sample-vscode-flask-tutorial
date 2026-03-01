@@ -120,8 +120,9 @@ stages:
 
 - stage: DeployToSandbox
   displayName: 'Deploy to Sandbox Production'
+  dependsOn: DeployToStaging
   condition: succeeded()
-  trigger: manual
+  #trigger: manual
   jobs:
   - job: DeployAlternateProductionJob
     displayName: 'Deploy to Sandbox Production Job'
